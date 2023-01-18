@@ -1,0 +1,57 @@
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    text-align: center;
+}
+
+.room-types{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.book-now-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+#book-now-btn{
+    font-size: 30px;
+    padding: 20px 40px;
+    border-radius: 30px;
+    color: #FFFFFF;
+    background-color: #EF8354;
+    box-shadow: 5px 5px 5px #BFC0C0;
+    border: none;
+    transition: ease-in 1.5s;
+}
+
+#book-now-btn:hover{
+    scale: 1.1;
+    background-color: #f1a17f;
+}
+
+input[type="date"]{
+    background-color: #0080ff;
+    padding: 15px;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
