@@ -1,3 +1,4 @@
+import Customer from "./Customer.js";
 $(function () {
     let room = '';
     $('#header').load('Navbar.html');
@@ -39,7 +40,10 @@ $(function () {
         });
         room = 'vip';
     });
+    let c = new Customer('youssef', 'abc@gmail',12332,12);
+    console.log(c.Data());
 });
+
 
 
 
