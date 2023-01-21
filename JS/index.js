@@ -1,5 +1,3 @@
-const { json } = require("body-parser");
-
 $(function () {
 
     $('#header').load('Navbar.html');
@@ -65,4 +63,16 @@ function CreateCard(res_id, roomprice, start_date, end_date) {
 function addDummyData() {
     localStorage.setItem('Reseav',JSON.stringify(Reservation))
     localStorage.setItem('Reseav',JSON.stringify(Reservation))
+
+}
+function AddRes(data) {
+    var oldData= JSON.parse(localStorage.getItem('Reseav'));
+    oldData.push()
+    localStorage.setItem('Reseav',JSON.stringify(oldData))   
+}
+function Delete(id) {
+    var oldData= JSON.parse(localStorage.getItem('Reseav'));
+    for (const iterator of object) {
+        array
+    }
 }

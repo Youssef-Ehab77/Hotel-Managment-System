@@ -1,7 +1,9 @@
 var Reservation = [
   {
+    'id': 1,
     "roomId": 101,
-    "customerId": 1,
+    "customerUserName": "joe",
+    'PreicePerDay': 512,
     "startDate": "8-1-2023",
     "endDate": "11-1-2023"
   },
