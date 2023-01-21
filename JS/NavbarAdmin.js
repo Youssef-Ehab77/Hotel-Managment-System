@@ -5,6 +5,12 @@ $(function () {
     })
 })
 
+$(function () {
+    $('#AboutUs').click(function () {
+        location.href = 'admin-requests.html'
+    })
+})
+
 // "/HTML/ContactUs.html"
 $(function () {
     var pageName = window.location.href;
