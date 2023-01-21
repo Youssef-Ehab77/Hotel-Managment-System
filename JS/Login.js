@@ -58,4 +58,7 @@ var addDummyData = function () {
     localStorage.setItem('reservations', JSON.stringify(Reservations));
     localStorage.setItem('rooms', JSON.stringify(Rooms));
     localStorage.setItem('availableRooms', JSON.stringify(AvailableRooms));
+    localStorage.setItem('admins', JSON.stringify(Admins));
+    localStorage.setItem('reception', JSON.stringify(Reception));
+    localStorage.setItem('roomTypes', JSON.stringify(roomTypes));
 }

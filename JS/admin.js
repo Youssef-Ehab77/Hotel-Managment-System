@@ -1,5 +1,6 @@
 $(function () {
-    
+    let startDate = '';
+    let endDate = '';
     let currentRoom = '';
     $('#header').load('NavbarAdmin.html');
     $('#footer').load('Footer.html');
@@ -24,8 +25,8 @@ $(function () {
     '</div>')
     }
 
-
-    $('#card1').click(function () {
+//.closest <<<<<
+    $('.card').click(function () {
         $('#card1').css({
             'border': '2px solid red'
         });
@@ -35,7 +36,6 @@ $(function () {
         $('#card3').css({
             'border': '1px solid #c0c3c3'
         });
-        currentRoom = 'single';
     });
     $('#card2').click(function () {
         $('#card2').css({
@@ -47,7 +47,6 @@ $(function () {
         $('#card3').css({
             'border': '1px solid #c0c3c3'
         });
-        currentRoom = 'double';
     });
     $('#card3').click(function () {
         $('#card3').css({
@@ -59,13 +58,14 @@ $(function () {
         $('#card1').css({
             'border': '1px solid #c0c3c3'
         });
-        currentRoom = 'vip';
+
     });
 
     setTimeout(function (){
     $('.card').click(function () {
         $('.removable').remove();
         $(this).closest(".card").after('<div class="removable"><div class="editDetails"><label>Price</label><input id="price"></input><label>Description</label><input id="description"></input></div><button id="submit">Submit Edit</button></div>');
+        currentRoom = $(this).closest(".card").find(".card-title").text().split(" ")[0]
     });
 }, 100)
 
@@ -80,19 +80,28 @@ $(document).on('click', '#submit', function () {
 
 var rooms = JSON.parse(localStorage.getItem("rooms"))
 
+
 // check availability
 //loop over rooms, and check if there is available rooms of this type
 //else, print not available
 $('#end-date').change(function (){
+    let today = new Date();
+    startDate = new Date($('#start-date').val());
+    endDate = new Date($('#end-date').val());
     $('#availabilityText').remove();
     var flag = 0;
     for (var room of rooms)
-        if (room.type == currentRoom && room.status == 'available')
-        {
-            $('#end-date').after('<br><br><div id="availabilityText">There is available ' + currentRoom + ' rooms</div>');
-            flag = 1;
-            break;
+        if (startDate !== '' && endDate !== '' && startDate >= today - 86400000 && endDate - startDate >= 86400)
+        {  
+            console.log(currentRoom)
+            if (room.type == currentRoom && room.status == 'available')
+            {
+                $('#end-date').after('<br><br><div id="availabilityText">There is available ' + currentRoom + ' rooms</div>');
+                flag = 1;
+                break;
+            }
         }
+
     if (flag == 0)
         $('#end-date').after('<br><br><div id="availabilityText">There is no available ' + currentRoom + ' rooms</div>')
 

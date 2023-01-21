@@ -11,7 +11,7 @@ console.log(requests)
 
 for (request of requests)
 {
-    var number_of_days = request.endDate.split("-")[0] - request.startDate.split("-")[0];
+    var number_of_days = request.endDate.split("-")[2] - request.startDate.split("-")[2];
     
     $("#header").after(
     '<div class="request" class="container">' +
