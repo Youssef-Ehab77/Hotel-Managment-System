@@ -23,10 +23,10 @@ $(function () {
 
         //&& getCookie('username') === username && getCookie('password') === password
         if (l_Username.length >= 3 && l_Password.length >= 4) {
-            let customers = JSON.parse(localStorage.getItem('customers'));
+            let admins = JSON.parse(localStorage.getItem('admins'));
             let found = false;
-            for (let customer of customers) {
-                if (customer.username === l_Username && customer.password === l_Password) {
+            for (let admin of admins) {
+                if (admin.username === l_Username && admin.password === l_Password) {
                     setCookie('username', l_Username);
                     found = true;
                     break;
@@ -34,12 +34,13 @@ $(function () {
             }
             if (!found)
                 swal("Wrong Username or Password!");
-            else document.location.href = '../HTML/CustomerHomePage.html';
+            else document.location.href = '../HTML/admin.html';
         } else {
             // alert('Wrong Username or Password!');
             swal("Wrong Username or Password!");
         }
     });
+
 });
 
 //* handle when click on sing-up from home-page
@@ -52,13 +53,3 @@ $(function () {
         }, 500);
     }
 });
-
-var addDummyData = function () {
-    localStorage.setItem('customers', JSON.stringify(Customers));
-    localStorage.setItem('reservations', JSON.stringify(Reservations));
-    localStorage.setItem('rooms', JSON.stringify(Rooms));
-    localStorage.setItem('availableRooms', JSON.stringify(AvailableRooms));
-    localStorage.setItem('admins', JSON.stringify(Admins));
-    localStorage.setItem('reception', JSON.stringify(Reception));
-    localStorage.setItem('roomTypes', JSON.stringify(roomTypes));
-}

@@ -5,6 +5,17 @@ $(function () {
     })
 })
 
+$(function () {
+    $('#AboutUs').click(function () {
+        location.href = 'admin-requests.html'
+    })
+})
+$(function () {
+    $('#ContactUs').click(function () {
+        location.href = 'admin-profile.html'
+    })
+})
+
 // "/HTML/ContactUs.html"
 $(function () {
     var pageName = window.location.href;

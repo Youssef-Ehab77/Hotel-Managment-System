@@ -1,10 +1,32 @@
 $(function () {
-    
-    let room = '';
+    let startDate = '';
+    let endDate = '';
+    let currentRoom = '';
     $('#header').load('NavbarAdmin.html');
     $('#footer').load('Footer.html');
 
-    $('#card1').click(function () {
+    var roomTypes = JSON.parse(localStorage.getItem("roomTypes"))
+
+    for (var roomtype of roomTypes)
+    {
+        $(".textEdit").after('<div class="card m-3" style="max-width: 540px;">' +
+        '<div class="row g-0">' +
+            '<div class="col-md-6">' +
+                '<img src="../Images/' + roomtype.type + '.jpg" class="img-fluid rounded-start" alt="...">' +
+            '</div>' +
+            '<div class="col-md-6">' +
+                '<div class="card-body">' +
+                    '<h5 class="card-title">' + roomtype.type +  ' Room</h5>' +
+                    '<p class="description-text" class="card-text">' + roomtype.description + '</p>' +
+                    '<p class="card-text"><small class="text-muted">' + roomtype.price + '$ per Night</small></p>' +
+                '</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>')
+    }
+
+//.closest <<<<<
+    $('.card').click(function () {
         $('#card1').css({
             'border': '2px solid red'
         });
@@ -14,7 +36,6 @@ $(function () {
         $('#card3').css({
             'border': '1px solid #c0c3c3'
         });
-        room = 'single';
     });
     $('#card2').click(function () {
         $('#card2').css({
@@ -26,7 +47,6 @@ $(function () {
         $('#card3').css({
             'border': '1px solid #c0c3c3'
         });
-        room = 'double';
     });
     $('#card3').click(function () {
         $('#card3').css({
@@ -38,35 +58,59 @@ $(function () {
         $('#card1').css({
             'border': '1px solid #c0c3c3'
         });
-        room = 'vip';
+
     });
 
     setTimeout(function (){
     $('.card').click(function () {
         $('.removable').remove();
         $(this).closest(".card").after('<div class="removable"><div class="editDetails"><label>Price</label><input id="price"></input><label>Description</label><input id="description"></input></div><button id="submit">Submit Edit</button></div>');
+        currentRoom = $(this).closest(".card").find(".card-title").text().split(" ")[0]
     });
 }, 100)
 
+//change details
 $(document).on('click', '#submit', function () {
     var priceValue = $('#price').val()
     $(this).parents('.removable').prev('.card').find('.text-muted').text(priceValue + "$ per Night");
     var descriptionValue = $('#description').val()
     $(this).parents('.removable').prev('.card').find('.description-text').text(descriptionValue)
-
-
 });
 
 
+var rooms = JSON.parse(localStorage.getItem("rooms"))
+
+
+// check availability
+//loop over rooms, and check if there is available rooms of this type
+//else, print not available
 $('#end-date').change(function (){
-    if (room == 'double')
-        $('#end-date').after('<br><br><div>There is no available ' + room + ' rooms</div>')
-    else if (room != '')
-        $('#end-date').after('<br><br><div>There is available ' + room + ' rooms</div>')
+    let today = new Date();
+    startDate = new Date($('#start-date').val());
+    endDate = new Date($('#end-date').val());
+    $('#availabilityText').remove();
+    var flag = 0;
+    for (var room of rooms)
+        if (startDate !== '' && endDate !== '' && startDate >= today - 86400000 && endDate - startDate >= 86400)
+        {  
+            console.log(currentRoom)
+            if (room.type == currentRoom && room.status == 'available')
+            {
+                $('#end-date').after('<br><br><div id="availabilityText">There is available ' + currentRoom + ' rooms</div>');
+                flag = 1;
+                break;
+            }
+        }
+
+    if (flag == 0)
+        $('#end-date').after('<br><br><div id="availabilityText">There is no available ' + currentRoom + ' rooms</div>')
+
+    
+
 })
 
-
-
+    
+    
 
 
     // $('#edit').click(function () {
