@@ -24,6 +24,6 @@ var Reservations = [
         'PricePerDay': 400,
         "startDate": "2023-1-28",
         "endDate": "2023-2-1",
-        "Status": "pending"
+        "Status": "Canceled"
     },
 ]
