@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/HeaderAndFooter.css">
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <title>Booking</title>
+</head>
+<body>
+<header id="header"></header>
+<main class="booking-container">
+    <div>
+        <div class="textCheck">Check Availablity</div> <br><br>
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" name="availablity">
+        <br><br><br>
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" name="availablity">
+    </div>
+    <div class="room-types">
+        <div class="textEdit">Edit details</div> <br><br>
+
+        <div id="card1" class="card m-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="../Images/single.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room</h5>
+                        <p class="description-text" class="card-text">This is a wider card with supporting text below as a natural </p>
+                        <p class="card-text"><small class="text-muted">200$ per Night</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="card2" class="card m-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="../Images/double.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room</h5>
+                        <p class="description-text" class="card-text">This is a wider card with supporting text below as a </p>
+                        <p class="card-text"><small class="text-muted">300$ per Night</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="card3" class="card m-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="../Images/vip.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">VIP Room</h5>
+                        <p class="description-text" class="card-text">This is a wider card with supporting text below as a natural</p>
+                        <p class="card-text"><small class="text-muted">400$ per Night</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="book-now-container">
+    <button id="book-now-btn">Book Now</button>
+</div>
+<footer id="footer"></footer>
+</body>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../JS/Cookie.js"></script>
+<script src="../Lib/jquery.js"></script>
+<script src="../JS/admin.js"></script>
+</html>
+
