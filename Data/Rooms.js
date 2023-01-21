@@ -58,7 +58,7 @@ var Rooms = [
     {
         "roomId": 301,
         "type": "vip",
-        "status": "unavailable",
+        "status": "available",
         "price": 400,
         "numberOfBeds": 2
     }
