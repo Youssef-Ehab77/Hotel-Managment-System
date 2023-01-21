@@ -1,27 +1,29 @@
 import Person from "./Person.js";
+
 export default class Customer extends Person {
 
-    constructor(name, email, password) {
-        super(name, email, password);
-        this._name = name;
-        this._email = email;
+    constructor(id, username, password) {
+        super(id, username, password);
+        this._id = id;
+        this._username = username;
         this._password = password;
     }
 
-    get name() {
-        return this._name;
+
+    get id() {
+        return this._id;
     }
 
-    set name(value) {
-        this._name = value;
+    set id(value) {
+        this._id = value;
     }
 
-    get email() {
-        return this._email;
+    get username() {
+        return this._username;
     }
 
-    set email(value) {
-        this._email = value;
+    set username(value) {
+        this._username = value;
     }
 
     get password() {
@@ -32,7 +34,7 @@ export default class Customer extends Person {
         this._password = value;
     }
 
-    Data(){
-        return `Customer Name: ${this.name}\n Customer Password: ${this.password} `;
+    getData() {
+        return {"id": this._id, "username": this._username, "password": this._password};
     }
 }

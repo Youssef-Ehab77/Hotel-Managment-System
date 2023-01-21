@@ -1,10 +1,11 @@
 export default class Person {
-    #name;
-    #email;
+    #id;
+    #username;
     #password;
-    constructor(name, email, password) {
-        this.#name = name;
-        this.#email = email;
+
+    constructor(id, username, password) {
+        this.#id = id;
+        this.#username = name;
         this.#password = password;
     }
 }

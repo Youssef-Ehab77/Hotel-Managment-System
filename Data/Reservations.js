@@ -1,9 +1,12 @@
-var Reservation = [
+var Reservations = [
     {
+        "id": 1,
         "roomId": 101,
-        "customerId": 1,
+        "customerUserName": "joe",
+        'PricePerDay': 512,
         "startDate": "8-1-2023",
-        "endDate": "11-1-2023"
+        "endDate": "11-1-2023",
+        "Status" : "pending/ confirmed"
     },
     {
         "roomId": 100,

@@ -18,14 +18,23 @@ $(function () {
 
 
     $('#login-btn').click(function () {
-        let username = $('#l-username').get(0).value;
-        let password = $('#l-password').get(0).value;
+        let l_Username = $('#l-username').get(0).value;
+        let l_Password = $('#l-password').get(0).value;
 
-        if (username.length >= 4 && password.length >= 4 && getCookie('username') === username && getCookie('password') === password) {
-            // let date = new Date();
-            // date.setMonth(date.getMonth() + 1)
-            // setCookie('Rooms', Rooms, date);
-            document.location.href = '../HTML/index.html';
+        //&& getCookie('username') === username && getCookie('password') === password
+        if (l_Username.length >= 3 && l_Password.length >= 4) {
+            let customers = JSON.parse(localStorage.getItem('customers'));
+            let found = false;
+            for (let customer of customers) {
+                if (customer.username === l_Username && customer.password === l_Password) {
+                    setCookie('username', l_Username);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                swal("Wrong Username or Password!");
+            else document.location.href = '../HTML/CustomerHomePage.html';
         } else {
             // alert('Wrong Username or Password!');
             swal("Wrong Username or Password!");
@@ -43,4 +52,4 @@ $(function () {
             $('.register-container').show().slideDown();
         }, 500);
     }
-})
+});

@@ -1,3 +1,5 @@
+import Customer from "./Customer.js";
+
 $(function () {
     setTimeout(function () {
         $('#sign-up-btn').click(function () {
@@ -10,6 +12,10 @@ $(function () {
 
                 setCookie('username', username, date);
                 setCookie('password', password, date);
+                let oldData = JSON.parse(localStorage.getItem('customers'));
+                let c = new Customer((oldData.length + 1), username, password);
+                oldData.push(c.getData());
+                localStorage.setItem('customers', JSON.stringify(oldData));
                 swal("Signed Up Successfully!");
             } else {
                 swal("Please Enter at least 4 characters!");
