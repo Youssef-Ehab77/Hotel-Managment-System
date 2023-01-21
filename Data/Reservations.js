@@ -2,28 +2,28 @@ var Reservations = [
     {
         "id": 1,
         "roomId": 101,
-        "customerUserName": "joe",
-        'PricePerDay': 512,
-        "startDate": "8-1-2023",
-        "endDate": "11-1-2023",
-        "Status" : "pending/ confirmed"
+        "customerUserName": "omar",
+        'PricePerDay': 200,
+        "startDate": "27-1-2023",
+        "endDate": "29-1-2023",
+        "Status": "pending"
     },
     {
-        "roomId": 100,
-        "customerId": 2,
-        "startDate": "12-1-2023",
-        "endDate": "15-1-2023"
-    },
-    {
+        "id": 2,
         "roomId": 200,
-        "customerId": 3,
-        "startDate": "13-1-2023",
-        "endDate": "20-1-2023"
+        "customerUserName": "khalid",
+        'PricePerDay': 300,
+        "startDate": "8-2-2023",
+        "endDate": "11-2-2023",
+        "Status": "pending"
     },
     {
-        "roomId": 202,
-        "customerId": 4,
-        "startDate": "13-1-2023",
-        "endDate": "14-1-2023"
-    }
+        "id": 4,
+        "roomId": 300,
+        "customerUserName": "youssef",
+        'PricePerDay': 400,
+        "startDate": "28-1-2023",
+        "endDate": "1-2-2023",
+        "Status": "pending"
+    },
 ]

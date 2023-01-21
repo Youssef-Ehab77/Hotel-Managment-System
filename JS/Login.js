@@ -40,7 +40,6 @@ $(function () {
             swal("Wrong Username or Password!");
         }
     });
-
 });
 
 //* handle when click on sing-up from home-page
@@ -53,3 +52,10 @@ $(function () {
         }, 500);
     }
 });
+
+var addDummyData = function () {
+    localStorage.setItem('customers', JSON.stringify(Customers));
+    localStorage.setItem('reservations', JSON.stringify(Reservations));
+    localStorage.setItem('rooms', JSON.stringify(Rooms));
+    localStorage.setItem('availableRooms', JSON.stringify(AvailableRooms));
+}
