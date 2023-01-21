@@ -1,2 +1,2 @@
-var AvailableRooms = {single: 3, double: 4, vip: 2};
+var AvailableRooms = {single: 2, double: 3, vip: 1};
 

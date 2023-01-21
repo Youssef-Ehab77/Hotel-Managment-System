@@ -1,11 +1,9 @@
-//* when click on logo => go back to home page
 $(function () {
     $('#logo').click(function () {
-        location.href = 'CustomerHomePage.html'
+        location.href = 'Resp.html'
     })
 })
 
-// "/HTML/ContactUs.html"
 $(function () {
     var pageName = window.location.href;
     pageName = pageName.split('/');

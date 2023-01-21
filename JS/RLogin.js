@@ -1,7 +1,5 @@
 $(function () {
-    $("#registration-page").load('../HTML/Registration.html');
     $('#footer').load('../HTML/Footer.html');
-
     $(document).mouseup(function (p) {
         let register = $('.register-container');
         if (!register.is(p.target) && !register.has(p.target).length) {
@@ -23,10 +21,10 @@ $(function () {
 
         //&& getCookie('username') === username && getCookie('password') === password
         if (l_Username.length >= 3 && l_Password.length >= 4) {
-            let customers = JSON.parse(localStorage.getItem('customers'));
+            let receptions = JSON.parse(localStorage.getItem('reception'));
             let found = false;
-            for (let customer of customers) {
-                if (customer.username === l_Username && customer.password === l_Password) {
+            for (let reception of receptions) {
+                if (reception.username === l_Username && reception.password === l_Password) {
                     setCookie('username', l_Username);
                     found = true;
                     break;
@@ -34,7 +32,7 @@ $(function () {
             }
             if (!found)
                 swal("Wrong Username or Password!");
-            else document.location.href = '../HTML/CustomerHomePage.html';
+            else document.location.href = '../HTML/Resp.html';
         } else {
             // alert('Wrong Username or Password!');
             swal("Wrong Username or Password!");
@@ -52,10 +50,3 @@ $(function () {
         }, 500);
     }
 });
-
-var addDummyData = function () {
-    localStorage.setItem('customers', JSON.stringify(Customers));
-    localStorage.setItem('reservations', JSON.stringify(Reservations));
-    localStorage.setItem('rooms', JSON.stringify(Rooms));
-    localStorage.setItem('availableRooms', JSON.stringify(AvailableRooms));
-}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Admin Profile</title>
     <link rel="stylesheet" href="../CSS/Registration.css">
     <link rel="stylesheet" href="../CSS/Login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,33 +14,27 @@
 
 </head>
 <body>
+<footer id="header"></footer>
 <div id="registration-page"></div>
 <div class="login-container">
     <div class="welcome">
-        <h1 class="logo-h1">Royal Orbit</h1>
-        <h2 class="l-site-quote">A New Revolution. A New Perspective.</h2>
-        <h2 class="l-site-quote">Complement your flawless beauty.</h2>
+        <h1 class="logo-h1">Change credentials</h1>
+        <h2 class="l-site-quote">Choose your password wisely</h2>
+        <h2 class="l-site-quote">Your safety matters!</h2>
     </div>
     <div class="login-form-container">
         <div class="login-form">
-            <input id="l-username" class="login-input-text" type="text" placeholder="Username">
-            <input id="l-password" class="login-input-text" type="password" placeholder="Password">
-            <a id="login-btn" class="login-btn" href="#">Log in</a>
-            <a id="sign-up" class="create-new-account-btn" href="#sign-up">Create New Account</a>
+            <input id="l-username" class="login-input-text" type="text" placeholder="New Username">
+            <input id="l-password" class="login-input-text" type="password" placeholder="New Password">
+            <br><br>
+            <a id="change-btn" class="create-new-account-btn" href="#">Change</a>
         </div>
     </div>
 </div>
 <footer id="footer"></footer>
 <script src="../Lib/jquery.js"></script>
 <script src="../JS/Cookie.js"></script>
-<script src="../Data/AvailableRooms.js"></script>
-<script src="../Data/Customers.js"></script>
-<script src="../Data/Rooms.js"></script>
-<script src="../Data/Reservations.js"></script>
-<script type="module" src="../JS/Customer.js"></script>
-<script type="module" src="../JS/Login.js"></script>
-<script type="module" src="../JS/Registration.js"></script>
+<script type="module" src="../JS/CustomerProfile.js"></script>
 </body>
-
 
 </html>
