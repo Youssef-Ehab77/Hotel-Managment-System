@@ -17,5 +17,4 @@ $(function () {
         touch: false
     });
 
-
 });

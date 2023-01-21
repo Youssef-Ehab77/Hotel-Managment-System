@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../CSS/HeaderAndFooter.css">
     <link rel="stylesheet" href="../CSS/Booking.css">
@@ -13,10 +14,10 @@
 <main class="booking-container">
     <div>
         <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date" name="birthday">
+        <input type="date" id="start-date" name="startDate">
         <br><br><br>
         <label for="end-date">End Date:</label>
-        <input type="date" id="end-date" name="birthday">
+        <input type="date" id="end-date" name="endDate">
     </div>
     <div class="room-types">
         <div id="card1" class="card m-3" style="max-width: 540px;">
@@ -71,5 +72,5 @@
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../JS/Cookie.js"></script>
 <script src="../Lib/jquery.js"></script>
-<script src="../JS/Booking.js"></script>
+<script type="module" src="../JS/Booking.js"></script>
 </html>
