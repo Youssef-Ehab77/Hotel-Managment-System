@@ -1,4 +1,4 @@
-[
+var rooms = [
   {
     "number": 100,
     "type": "single",
@@ -62,4 +62,4 @@
     "price": 300,
     "numberOfBeds": 2
   }
-]
+];

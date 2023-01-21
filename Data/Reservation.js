@@ -1,4 +1,4 @@
-[
+var Reservation = [
   {
     "roomId": 101,
     "customerId": 1,
