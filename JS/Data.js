@@ -1,2 +1,0 @@
-var Reservation = [];
-var Rooms=[]
