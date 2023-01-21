@@ -5,13 +5,14 @@ $(function () {
     $('#header').load('Navbar.html');
     $('#footer').load('Footer.html');
     $("#change-btn").click(function () {
-        for (var user of customers)
+        for (var user of customers) {
             if (user.username == thisusername) {
-                user.username = $("#l-username").val()
-                user.password = $("#l-password").val()
+                user.username = $("#l-username").val();
+                user.password = $("#l-password").val();
+                break;
             }
+        }
+        localStorage.setItem("customers", JSON.stringify(customers));
     });
-
-    localStorage.setItem("customers", JSON.stringify(customers));
 });
 
