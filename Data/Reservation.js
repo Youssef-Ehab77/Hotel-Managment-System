@@ -2,27 +2,41 @@ var Reservation = [
   {
     'id': 1,
     "roomId": 101,
-    "customerUserName": "joe",
+    "customerUserName": "Joe Law",
     'PreicePerDay': 512,
-    "startDate": "8-1-2023",
-    "endDate": "11-1-2023"
+    "startDate": "2015-03-25",
+    "endDate": "2015-03-30"
   },
   {
-    "roomId": 100,
-    "customerId": 2,
-    "startDate": "12-1-2023",
-    "endDate": "15-1-2023"
+    'id': 2,
+    "roomId": 102,
+    "customerUserName": "Law Joe",
+    'PreicePerDay': 555,
+    "startDate": "2015-03-20",
+    "endDate": "2015-03-25"
   },
   {
-    "roomId": 200,
-    "customerId": 3,
-    "startDate": "13-1-2023",
-    "endDate": "20-1-2023"
+    'id': 3,
+    "roomId": 103,
+    "customerUserName": "Didi Snow",
+    'PreicePerDay': 125,
+    "startDate": "2015-04-25",
+    "endDate": "2015-05-2"
   },
   {
-    "roomId": 202,
-    "customerId": 4,
-    "startDate": "13-1-2023",
-    "endDate": "14-1-2023"
+    'id': 4,
+    "roomId": 15,
+    "customerUserName": "Rechard John",
+    'PreicePerDay': 1500,
+    "startDate": "2010-08-25",
+    "endDate": "2010-08-30"
+  },
+  {
+    'id': 5,
+    "roomId": 515,
+    "customerUserName": "John Green",
+    'PreicePerDay': 1500,
+    "startDate": "2010-12-25",
+    "endDate": "2011-01-01"
   }
 ]
