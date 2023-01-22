@@ -12,6 +12,7 @@ $(function () {
         let startDate = new Date(request.startDate);
         let endDate = new Date(request.endDate);
         let number_of_days = (endDate - startDate) / 86400000;
+
         if (request.customerUserName === name) {
             $('#customerReservations').append(
                 '<div class="reservation container mb-5">' +

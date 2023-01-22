@@ -11,22 +11,28 @@ console.log(requests)
 
 for (request of requests)
 {
-    var number_of_days = request.endDate.split("-")[2] - request.startDate.split("-")[2];
-    
-    $("#header").after(
-    '<div class="request" class="container">' +
-    '<div class="row mt-5">' +
-        '<div class="m-auto col-6">' +
-            '<p class="reservation">Room ' +  request.roomId + ' for ' + number_of_days + ' days, from ' + request.startDate + ' to ' + request.endDate + ' </p>' +
-        '</div>' +
-        '<div class="m-auto col-1">' +
-            '<button class="confirmRequest btn btn-info">Confirm</button>' +
-        '</div>' +
-        '<div class="m-auto col-1">' +
-            '<button class="cancelRequest btn btn-danger">Cancel</button>' +
-        '</div>' +
-   '</div>' +
-'</div>')
+    if (request.Status == 'pending')
+    {
+        console.log(request.Status)
+        let startDate = new Date(request.startDate);
+        let endDate = new Date(request.endDate);
+        let number_of_days = (endDate - startDate) / 86400000;
+        
+        $("#header").after(
+        '<div class="request" class="container">' +
+        '<div class="row mt-5">' +
+            '<div class="m-auto col-6">' +
+                '<p class="reservation">Room ' +  (request.roomId) + ' for ' + number_of_days + ' days, from ' + request.startDate + ' to ' + request.endDate + ' </p>' +
+            '</div>' +
+            '<div class="m-auto col-1">' +
+                '<button class="confirmRequest btn btn-info">Confirm</button>' +
+            '</div>' +
+            '<div class="m-auto col-1">' +
+                '<button class="cancelRequest btn btn-danger">Cancel</button>' +
+            '</div>' +
+    '</div>' +
+    '</div>')
+    }
 }
 
 var rooms = JSON.parse(localStorage.getItem("rooms"))
@@ -34,6 +40,7 @@ var rooms = JSON.parse(localStorage.getItem("rooms"))
 var availableRooms = JSON.parse(localStorage.getItem("availableRooms"))
 
 $('.cancelRequest').click(function(){
+    console.log("hello")
     var canceled_roomIdWhole = $(this).closest(".request").find(".reservation").text().split(" ")[1];
     var canceled_roomId = $(this).closest(".request").find(".reservation").text().split(" ")[1][0];
 
@@ -46,14 +53,14 @@ $('.cancelRequest').click(function(){
     else
         availableRooms.vip += 1;
 
-    localStorage.setItem("availableRooms", availableRooms)
+    localStorage.setItem("availableRooms", JSON.stringify(availableRooms))
 
     $(this).closest(".request").remove()
 
     for (request of requests)
         if (request.roomId == canceled_roomIdWhole)
         {
-            request.Status = "Canceled"
+            request.Status = "canceled"
             localStorage.setItem("reservations", JSON.stringify(requests))
             break;
         }
